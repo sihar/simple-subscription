@@ -43,11 +43,14 @@ class NotificationGenerator extends Command
     {
         $url = $this->argument('url');
         
-        $post = Post::first();
-        $subscribers = Subscriber::where('website', $url)->get();
-        foreach ($subscribers as $subscriber) {
-            Mail::to($subscriber->email)->send(new PostNotification($post));
-        }
+        // send email without queue
+        // $post = Post::first();
+        // $subscribers = Subscriber::where('website', $url)->get();
+        // foreach ($subscribers as $subscriber) {
+        //     Mail::to($subscriber->email)->send(new PostNotification($post));
+        // }
+
+        dispatch(new \App\Jobs\SendNotificationJob($url));
 
         return 0;
     }
