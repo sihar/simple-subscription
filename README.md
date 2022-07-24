@@ -13,5 +13,5 @@ Feature
 
 ### Send Email to subscriber
 ```php
-php artisan notification:send
+php artisan notification:send your_url
 ```
