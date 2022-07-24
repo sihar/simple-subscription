@@ -18,6 +18,7 @@ class CreateSubscribersTable extends Migration
             $table->string('website');
             $table->string('email');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
