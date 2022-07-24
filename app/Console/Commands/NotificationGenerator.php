@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Mail\PostNotification;
 use Illuminate\Console\Command;
 use App\Models\Post;
+use App\Models\Subscriber;
 use Illuminate\Support\Facades\Mail;
 
 class NotificationGenerator extends Command
@@ -14,14 +15,14 @@ class NotificationGenerator extends Command
      *
      * @var string
      */
-    protected $signature = 'notification:send';
+    protected $signature = 'notification:send {url}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command for send email notification to subscribers';
+    protected $description = 'Command for send email notification to subscribers by specific website';
 
     /**
      * Create a new command instance.
@@ -40,8 +41,13 @@ class NotificationGenerator extends Command
      */
     public function handle()
     {
-        $post = Post::findOrFail(2);
-        Mail::to('simbolonsihar@gmail.com')->send(new PostNotification($post));
+        $url = $this->argument('url');
+        
+        $post = Post::first();
+        $subscribers = Subscriber::where('website', $url)->get();
+        foreach ($subscribers as $subscriber) {
+            Mail::to($subscriber->email)->send(new PostNotification($post));
+        }
 
         return 0;
     }
