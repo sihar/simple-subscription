@@ -15,3 +15,8 @@ Feature
 ```php
 php artisan notification:send your_url
 ```
+
+### Other Link
+<a href="https://documenter.getpostman.com/view/14022441/UzXKXKFq">Postman Documentation</a>  
+
+[Postman Collection](postman/simple_subscription.postman_collection.json)

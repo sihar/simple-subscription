@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "1e5238dc-76ea-4bc5-998f-50e01b7d550f",
+		"name": "simple_subscription",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14022441"
+	},
+	"item": [
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "list post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{simple_subscription_url}}/api/post",
+							"host": [
+								"{{simple_subscription_url}}"
+							],
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "css",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "book about css",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{simple_subscription_url}}/api/post",
+							"host": [
+								"{{simple_subscription_url}}"
+							],
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{simple_subscription_url}}/api/post/1",
+							"host": [
+								"{{simple_subscription_url}}"
+							],
+							"path": [
+								"api",
+								"post",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "css",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "book about css 3",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{simple_subscription_url}}/api/post/2",
+							"host": [
+								"{{simple_subscription_url}}"
+							],
+							"path": [
+								"api",
+								"post",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{simple_subscription_url}}/api/post/1",
+							"host": [
+								"{{simple_subscription_url}}"
+							],
+							"path": [
+								"api",
+								"post",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subscriber",
+			"item": [
+				{
+					"name": "create subscriber",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "website",
+									"value": "website1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user3@example.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{simple_subscription_url}}/api/subscriber",
+							"host": [
+								"{{simple_subscription_url}}"
+							],
+							"path": [
+								"api",
+								"subscriber"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list subscriber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{simple_subscription_url}}/api/subscriber",
+							"host": [
+								"{{simple_subscription_url}}"
+							],
+							"path": [
+								"api",
+								"subscriber"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
