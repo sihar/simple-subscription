@@ -8,12 +8,17 @@ Feature
 ### Installation
 - git clone from repo
 - copy .env.example to .env
-- make adjustment to that file
+- make adjustment in environment file (.env)
 - php artisan migrate
 
 ### Send Email to subscriber
 ```php
 php artisan notification:send your_url
+```
+
+### Running queue
+```php
+php artisan queue:work
 ```
 
 ### Other Link
